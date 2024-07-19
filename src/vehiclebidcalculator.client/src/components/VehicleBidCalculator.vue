@@ -7,12 +7,19 @@
                         <br />
                         <div class="form-group">
                             <label for="formVehiclePrice">Vehicle Price</label>
-                            <input type="number" step=".01" class="form-control" id="formVehiclePrice" v-model="calculationForm.vehiclePrice" />
+                            <input type="number" 
+                                   step=".01" 
+                                   placeholder='0.00'
+                                   class="form-control" 
+                                   id="formVehiclePrice" 
+                                   v-model="calculationForm.vehiclePrice" />
                         </div>
 
                         <div class="form-group">
                             <label for="formVehicleType">Vehicle Type</label>
-                            <select class="form-select" id="formVehicleType" v-model="calculationForm.vehicleType">
+                            <select class="form-select" 
+                                    id="formVehicleType" 
+                                    v-model="calculationForm.vehicleType">
                                 <option value="Common">Common</option>
                                 <option value="Luxury">Luxury</option>
                             </select>
@@ -26,39 +33,72 @@
                     <br />
                     <div class="form-group">
                         <label for="resultVehiclePrice">Vehicle Price</label>
-                        <input type="number" step=".01" class="form-control" id="resultVehiclePrice" v-model="calculationResult.vehiclePrice" />
+                        <input type="number" 
+                               step=".01" 
+                               class="form-control" 
+                               id="resultVehiclePrice" 
+                               v-model="calculationResult.vehiclePrice"
+                               readonly />
                     </div>
 
                     <div class="form-group">
                         <label for="resultVehicleType">Vehicle Type</label>
-                        <input type="text" class="form-control" id="resultVehicleType" v-model="calculationResult.vehicleType" />
+                        <input type="text" 
+                               class="form-control" 
+                               id="resultVehicleType"
+                               v-model="calculationResult.vehicleType"
+                               readonly />
                     </div>
 
                     <div class="form-group">
                         <label for="resultBasicFee">Basic Fee</label>
-                        <input type="number" step=".01" class="form-control" id="resultBasicFee" v-model="calculationResult.basicFee" />
+                        <input type="number" step=".01" 
+                               class="form-control" 
+                               id="resultBasicFee" 
+                               v-model="calculationResult.basicFee"
+                               readonly />
                     </div>
 
                     <div class="form-group">
                         <label for="resultSpecialFee">Special Fee</label>
-                        <input type="number" step=".01" class="form-control" id="resultSpecialFee" v-model="calculationResult.specialFee" />
+                        <input type="number" 
+                               step=".01"
+                               class="form-control"
+                               id="resultSpecialFee" 
+                               v-model="calculationResult.specialFee"
+                               readonly />
                     </div>
 
                     <div class="form-group">
                         <label for="resultAssociationFee">Association Fee</label>
-                        <input type="number" step=".01" class="form-control" id="resultAssociationFee" v-model="calculationResult.associationFee" />
+                        <input type="number"
+                               step=".01" 
+                               class="form-control" 
+                               id="resultAssociationFee" 
+                               v-model="calculationResult.associationFee"
+                               readonly />
                     </div>
 
                     <div class="form-group">
                         <label for="resultStorageFee">Storage Fee</label>
-                        <input type="number" step=".01" class="form-control" id="resultStorageFee" v-model="calculationResult.storageFee" />
+                        <input type="number"
+                               step=".01" 
+                               class="form-control" 
+                               id="resultStorageFee" 
+                               v-model="calculationResult.storageFee" 
+                               readonly />
                     </div>
 
                     <br />
                     <br />
                     <div class="form-group">
                         <label for="resultTotal"><b>Total</b></label>
-                        <input type="number" step=".01" class="form-control" id="resultTotal" v-model="calculationResult.total">
+                        <input type="number" 
+                               step=".01" 
+                               class="form-control" 
+                               id="resultTotal"
+                               v-model="calculationResult.total"
+                               readonly />
                     </div>
                     <br />
                 </div>
@@ -70,14 +110,14 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
 
-    enum VehicleType {
-        Common = 0,
-        Luxury = 1,
-    };
+    const vehicleCommonType: string = "Common";
+    const vehicleLuxuryType: string = "Luxury";
+
+    const vehicleBidCalculationEndpoint: string = "api/vehicle-bids/calculation";
 
     type VehicleBidCalculationForm = {
         vehiclePrice: number,
-        vehicleType: VehicleType,
+        vehicleType: string,
     };
 
     type VehicleBidCalculationResult = VehicleBidCalculationForm & {
@@ -114,12 +154,12 @@
 
                 this.calculationForm = {
                     vehiclePrice: 0,
-                    vehicleType: VehicleType.Common,
+                    vehicleType: vehicleCommonType,
                 } as VehicleBidCalculationForm;
 
                 this.calculationResult = {
                     vehiclePrice: 0,
-                    vehicleType: VehicleType.Common,
+                    vehicleType: vehicleCommonType,
                     basicFee: 0,
                     specialFee: 0,
                     associationFee: 0,
@@ -133,7 +173,7 @@
                     vehicleType: this.calculationForm.vehicleType,
                 };
 
-                const request = new Request("api/vehicle-bids/calculation", {
+                const request = new Request(vehicleBidCalculationEndpoint, {
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -151,7 +191,7 @@
 
 <style scoped>
     .vertical-center {
-        min-height: 100vh;
+        min-height: 75vh;
         display: flex;
         align-items: center;
     }

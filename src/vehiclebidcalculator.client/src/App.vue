@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+    import VehicleBidCalculator from './components/VehicleBidCalculator.vue'
 </script>
 
 <template>
-    <!--<header>
-        <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-        <div class="wrapper">
-            <HelloWorld msg="You did it!" />
-        </div>
-    </header>-->
-    <h1 class="text-center">Vehicle Bid Calculator</h1>
-    <HelloWorld msg="You did it!" />
+    <div class="h-100 d-flex justify-content-center align-items-center">
+        <img alt="Vue logo" src="./assets/logo.svg" width="100" height="100" />
+    </div>
+    <div class=" h-100 d-flex justify-content-center align-items-center">
+        <h1 class="text-center">Vehicle Bid Calculator</h1>
+    </div>
+    <VehicleBidCalculator />
 </template>
 
 <style scoped>
