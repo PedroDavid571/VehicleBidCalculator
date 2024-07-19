@@ -17,11 +17,18 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vehiclebidcalculator.client
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleBidCalculator.Server", "src\VehicleBidCalculator.Server\VehicleBidCalculator.Server.csproj", "{F257C21F-7981-4E70-8BE8-27F701AE0F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBidCalculator.Business", "src\VehicleBidCalculator.Business\VehicleBidCalculator.Business.csproj", "{EA6D5C15-7644-4E49-BBD9-DB8D02FA9D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleBidCalculator.Business", "src\VehicleBidCalculator.Business\VehicleBidCalculator.Business.csproj", "{EA6D5C15-7644-4E49-BBD9-DB8D02FA9D48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBidCalculator.Domain", "src\VehicleBidCalculator.Domain\VehicleBidCalculator.Domain.csproj", "{5AA7FE51-DE78-47AF-912F-5D9C4F03B6BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleBidCalculator.Domain", "src\VehicleBidCalculator.Domain\VehicleBidCalculator.Domain.csproj", "{5AA7FE51-DE78-47AF-912F-5D9C4F03B6BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBidCalculator.Business.Tests", "tests\VehicleBidCalculator.Business.Tests\VehicleBidCalculator.Business.Tests.csproj", "{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleBidCalculator.Business.Tests", "tests\VehicleBidCalculator.Business.Tests\VehicleBidCalculator.Business.Tests.csproj", "{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{643C86B7-C3D0-44A1-94E1-4C9A3C3C3D95}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		visual-studio-start.png = visual-studio-start.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
