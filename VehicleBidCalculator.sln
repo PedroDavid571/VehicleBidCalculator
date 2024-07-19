@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBidCalculator.Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBidCalculator.Domain", "src\VehicleBidCalculator.Domain\VehicleBidCalculator.Domain.csproj", "{5AA7FE51-DE78-47AF-912F-5D9C4F03B6BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBidCalculator.Business.Tests", "tests\VehicleBidCalculator.Business.Tests\VehicleBidCalculator.Business.Tests.csproj", "{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{5AA7FE51-DE78-47AF-912F-5D9C4F03B6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AA7FE51-DE78-47AF-912F-5D9C4F03B6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AA7FE51-DE78-47AF-912F-5D9C4F03B6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{F257C21F-7981-4E70-8BE8-27F701AE0F2F} = {D133C0BB-E323-4001-9B9F-8769D2E51943}
 		{EA6D5C15-7644-4E49-BBD9-DB8D02FA9D48} = {D842A57D-6168-43A6-BDC8-BD3BB24FCC1A}
 		{5AA7FE51-DE78-47AF-912F-5D9C4F03B6BD} = {582F66B3-2582-44FD-988D-72CA7A9599D8}
+		{1C09E3EF-09B7-4017-BC2A-68C4AAEBBA58} = {4DB6652D-4E59-41D1-A073-ABFF72C26F15}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1851C93C-CC62-4FBC-B2AC-10D33F6F8491}
