@@ -16,3 +16,4 @@ npm run dev
 ```
 
 Additionally, both projects can run simultaniously using:
+![visual-studio-start](https://github.com/user-attachments/assets/ddaba088-a3fc-41f3-85b6-b262a7e69d47)
