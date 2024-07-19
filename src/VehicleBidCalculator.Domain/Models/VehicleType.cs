@@ -1,4 +1,4 @@
-﻿namespace VehicleBidCalculator.Server.Models;
+﻿namespace VehicleBidCalculator.Domain.Models;
 
 public enum VehicleType
 {

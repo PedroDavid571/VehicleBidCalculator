@@ -1,4 +1,6 @@
-﻿namespace VehicleBidCalculator.Server.Models;
+﻿using VehicleBidCalculator.Domain.Models;
+
+namespace VehicleBidCalculator.Server.Models;
 
 public class VehicleBidCalculationDto
 {

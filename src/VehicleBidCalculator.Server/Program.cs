@@ -1,8 +1,16 @@
 using System.Text.Json.Serialization;
+using VehicleBidCalculator.Business.Services;
+using VehicleBidCalculator.Server.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddMaps(typeof(CommonProfile));
+});
+
+builder.Services.AddTransient<IVehicleBidService, VehicleBidService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
