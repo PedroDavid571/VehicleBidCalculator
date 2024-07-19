@@ -1,10 +1,12 @@
-﻿namespace VehicleBidCalculator.Server.Models;
+﻿using VehicleBidCalculator.Domain.Models;
 
-public class VehicleBidCalculationResultDto : VehicleBidCalculationDto
-{
-    public decimal BasicFee { get; set; }
-    public decimal SpecialFee { get; set; }
-    public decimal AssociationFee { get; set; }
-    public decimal StorageFee { get; set; }
-    public decimal Total { get; set; }
-}
+namespace VehicleBidCalculator.Server.Models;
+
+public readonly record struct VehicleBidCalculationResultDto(
+    decimal VehiclePrice,
+    VehicleType VehicleType,
+    decimal BasicFee,
+    decimal SpecialFee,
+    decimal AssociationFee,
+    decimal StorageFee,
+    decimal Total);

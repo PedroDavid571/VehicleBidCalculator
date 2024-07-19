@@ -22,12 +22,12 @@ public class VehicleBidServiceTests
         "15.00", "100.00", "1287.00")]
     [InlineData("1000000.00", VehicleType.Luxury, "200.00", "40000",
         "20.00", "100.00", "1040320.00")]
-    public async Task CalculateVehicleBidAsync_WhenCalledWithPriceAndType_ReturnsCalculatedVehicleBid(
+    public void CalculateVehicleBid_WhenCalledWithPriceAndType_ReturnsCalculatedVehicleBid(
         string vehiclePrice, VehicleType vehicleType, string expectedBasicFee, string expectedSpecialFee,
         string expectedAssociationFee, string expectedStorageFee, string expectedTotal)
     {
         // Arrange and Act
-        var vehicleBidCalculation = await _vehicleBidService.CalculateVehicleBidAsync(
+        var vehicleBidCalculation = _vehicleBidService.CalculateVehicleBid(
             decimal.Parse(vehiclePrice), vehicleType);
 
         // Assert

@@ -17,9 +17,9 @@ public class VehicleBidController(IMapper mapper,
     /// <response code="200">Vehicle Bid Calculation result.</response>
     [HttpPost("calculation")]
     [ProducesResponseType(typeof(VehicleBidCalculationResultDto), (int)HttpStatusCode.OK)]
-    public async Task<IActionResult> CalculateVehicleBidAsync([FromBody] VehicleBidCalculationDto vehicleBidCalculationDto)
+    public IActionResult CalculateVehicleBid([FromBody] VehicleBidCalculationDto vehicleBidCalculationDto)
     {
-        var vehicleBidCalculationResult = await vehicleBidService.CalculateVehicleBidAsync(vehicleBidCalculationDto.VehiclePrice,
+        var vehicleBidCalculationResult = vehicleBidService.CalculateVehicleBid(vehicleBidCalculationDto.VehiclePrice,
             vehicleBidCalculationDto.VehicleType);
 
         var vehicleBidCalculationResultDto = mapper.Map<VehicleBidCalculationResultDto>(vehicleBidCalculationResult);

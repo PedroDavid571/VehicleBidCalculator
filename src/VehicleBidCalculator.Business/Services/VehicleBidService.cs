@@ -5,27 +5,25 @@ namespace VehicleBidCalculator.Business.Services;
 
 public class VehicleBidService : IVehicleBidService
 {
-    public async Task<VehicleBidCalculationResult> CalculateVehicleBidAsync(decimal vehiclePrice, VehicleType vehicleType)
+    public VehicleBidCalculationResult CalculateVehicleBid(decimal vehiclePrice, VehicleType vehicleType)
     {
         var normalizedVehiclePrice = Math.Round(vehiclePrice, 2);
 
         var basicFee = VehicleBidHelper.CalculateBasicFee(normalizedVehiclePrice, vehicleType);
         var specialFee = VehicleBidHelper.CalculateSpecialFee(normalizedVehiclePrice, vehicleType);
-        var associateFee = VehicleBidHelper.CalculateAssociationFee(normalizedVehiclePrice);
+        var associationFee = VehicleBidHelper.CalculateAssociationFee(normalizedVehiclePrice);
         var storageFee = VehicleBidHelper.CalculateStorageFee();
-        var total = vehiclePrice + basicFee + specialFee + associateFee + storageFee;
+        var total = vehiclePrice + basicFee + specialFee + associationFee + storageFee;
 
-        var result = new VehicleBidCalculationResult
-        {
-            VehiclePrice = normalizedVehiclePrice,
-            VehicleType = vehicleType,
-            BasicFee = basicFee,
-            SpecialFee = specialFee,
-            AssociationFee = associateFee,
-            StorageFee = storageFee,
-            Total = total
-        };
+        var result = new VehicleBidCalculationResult(
+            vehiclePrice,
+            vehicleType,
+            basicFee, 
+            specialFee,
+            associationFee,
+            storageFee, 
+            total);
 
-        return await Task.FromResult(result);
+        return result;
     }
 }
